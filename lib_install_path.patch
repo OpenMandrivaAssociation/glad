@@ -1,0 +1,22 @@
+--- CMakeLists.txt
++++ CMakeLists.txt
+@@ -191,7 +191,7 @@
+ # Install
+ if(GLAD_INSTALL)
+ 
+-  set(config_install_dir lib/cmake/glad)
++  set(config_install_dir ${LIB_INSTALL_DIR}/cmake/glad)
+   set(version_config "${CMAKE_CURRENT_BINARY_DIR}/gladConfigVersion.cmake")
+   set(project_config "${CMAKE_CURRENT_BINARY_DIR}/gladConfig.cmake")
+   set(targets_export_name "gladTargets")
+@@ -215,8 +215,8 @@
+   install(
+     TARGETS glad
+     EXPORT "${targets_export_name}"
+-    LIBRARY DESTINATION lib
+-    ARCHIVE DESTINATION lib
++    LIBRARY DESTINATION ${LIB_INSTALL_DIR}
++    ARCHIVE DESTINATION ${LIB_INSTALL_DIR}
+     RUNTIME DESTINATION bin)
+ 
+   install(FILES ${GLAD_HEADERS}
